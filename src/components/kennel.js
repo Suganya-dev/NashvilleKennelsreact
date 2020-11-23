@@ -37,8 +37,9 @@ export const Kennel = () => (
         </article>
         <h2>Location</h2>
         <article className="locations">
-            < Location/>
-            < Location/>
+        <LocationProvider>
+            < LocationList/>
+            </LocationProvider>
             </article>
     </>
 )
