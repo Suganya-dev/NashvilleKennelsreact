@@ -13,10 +13,10 @@ export const LocationList = () => {
         getLocations()
     }, [])
 
-    useEffect(() => {
-        console.log("LocationList: Location state changed")
-        console.log(locations)
-    }, [locations])
+    // useEffect(() => {
+    //     console.log("LocationList: Location state changed")
+    //     console.log(locations)
+    // }, [locations])
 
     return (
         <div className="locations">
