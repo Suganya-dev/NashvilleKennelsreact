@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 export const LocationContext = React.createContext()
+import "./Location.css"
 
 export const LocationProvider = (props) => {
     const [locations, setLocations] = useState([])
