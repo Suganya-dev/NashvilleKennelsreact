@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from "react"
-import { EmployeeContext} from "./EmployeeProvider"
+import { EmployeeContext,EmployeeProvider} from "./EmployeeProvider"
 import { Employee } from "./Employee"
 import "./Employee.css"
 
 export const EmployeeList = () => {
+
     const {employees, getEmployees} = useContext(EmployeeContext);
 
     useEffect(() => {
-        console.log("LocationList: Initial render before data")
+        console.log("EmployeeList: Initial render before data")
         getEmployees()
     },[])
 
