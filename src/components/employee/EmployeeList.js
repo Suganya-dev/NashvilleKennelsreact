@@ -12,14 +12,7 @@ export const EmployeeList = () => {
         getEmployees()
     },[])
 
-    // useEffect(() => {
-    //     // console.log("LocationList: Location state changed");
-    //     // console.log(employees);
-    //   }, [employees]);
-    
-
-      
-    return (
+   return (
         <div className="employees">
         {
             employees.map(emp => <Employee key={emp.id} employee={emp} />)

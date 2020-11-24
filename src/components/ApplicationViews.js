@@ -2,6 +2,10 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { LocationProvider } from "./location/LocationProvider"
 import { AnimalProvider } from "./animal/AnimalProvider"
+import {EmployeeProvider} from "./employee/EmployeeProvider"
+import {CustomerProvider} from "./customers/CustomerProvider"
+import {CustomerList} from "./customers/CustomerList"
+import {EmployeeList} from "./employee/EmployeeList"
 import { LocationList } from "./location/LocationList"
 import { AnimalList } from "./animal/AnimalList"
 
@@ -21,6 +25,18 @@ export const ApplicationViews = (props) => {
                     <AnimalList />
                 </Route>
             </AnimalProvider>
+
+            <EmployeeProvider >
+            <Route path="/employees">
+            <EmployeeList />
+            </Route>
+             </EmployeeProvider >
+
+             < CustomerProvider>
+             <Route path="/customers">
+            <CustomerList/>
+                </Route>    
+             </ CustomerProvider>
         </>
     )
 }
