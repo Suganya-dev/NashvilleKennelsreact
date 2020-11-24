@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Kennel} from "./components/kennel.js";
+import {Kennel} from "./components/kennel";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

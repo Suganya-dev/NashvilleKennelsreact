@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { Customercontext } from "./CustomerProvider.js"
-import { Customer } from "./Customer.js"
+import { Customercontext } from "./CustomerProvider"
+import { Customer } from "./Customer"
 import "./Customer.css"
 
 export const CustomerList = () => {
@@ -10,12 +10,12 @@ export const CustomerList = () => {
     useEffect(() => {
         console.log("LocationList: Initial render before data")
         getCustomers()
-    })
+    },[])
 
     return (
         <div className="Customers">
         {
-            customers.map(cust => <Customer key={cust.id} Address={cust} />)
+            customers.map(cust => <Customer key={cust.id} customer={cust} />)
         }
         </div>
     )

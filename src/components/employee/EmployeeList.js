@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { EmployeeContext} from "./EmployeeProvider.js"
-import { Employee } from "./Employee.js"
+import { EmployeeContext} from "./EmployeeProvider"
+import { Employee } from "./Employee"
 import "./Employee.css"
 
 export const EmployeeList = () => {
@@ -9,12 +9,19 @@ export const EmployeeList = () => {
     useEffect(() => {
         console.log("LocationList: Initial render before data")
         getEmployees()
-    });
+    },[])
 
+    // useEffect(() => {
+    //     // console.log("LocationList: Location state changed");
+    //     // console.log(employees);
+    //   }, [employees]);
+    
+
+      
     return (
         <div className="employees">
         {
-            employees.map(emp => <Employee key={emp.id} place={emp} />)
+            employees.map(emp => <Employee key={emp.id} employee={emp} />)
         }
         </div>
     )

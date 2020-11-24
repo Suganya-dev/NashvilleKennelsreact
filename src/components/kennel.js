@@ -7,17 +7,15 @@ import "./animal/Animal.css"
 import "./customers/Customer.css"
 import "./employee/Employee.css"
 
-import {LocationList} from "./location/LocationList.js"
-import {LocationProvider} from "./location/LocationProvider.js"
-import {AnimalProvider} from "./animal/AnimalProvider.js"
-import{AnimalList} from "./animal/AnimalList.js"
-import{CustomerProvider} from "./customers/CustomerProvider.js"
-import{CustomerList} from "./customers/CustomerList.js"
-import{EmployeeProvider} from "./employee/EmployeeProvider.js"
-import {EmployeeList} from"./employee/EmployeeList.js"
-// import {Customer} from "./customers/Customer.js"
-// import {Animal} from"./animal/Animal"
-// import {Employee} from "./employee/Employee.js"
+import {LocationList} from "./location/LocationList"
+import {LocationProvider} from "./location/LocationProvider"
+import {AnimalProvider} from "./animal/AnimalProvider"
+import{AnimalList} from "./animal/AnimalList"
+import{CustomerProvider} from "./customers/CustomerProvider"
+import{CustomerList} from "./customers/CustomerList"
+import{EmployeeProvider} from "./employee/EmployeeProvider"
+import {EmployeeList} from"./employee/EmployeeList"
+
 
 export const Kennel = () => (
     <>
@@ -30,22 +28,22 @@ export const Kennel = () => (
         <h2>Animals</h2>
         <article className="animals">
 
-            <AnimalProvider />
+            <AnimalProvider >
             <AnimalList/>
-            <AnimalProvider />
+            </AnimalProvider >
              </article>
 
         <h2>Employees</h2>
         <article className="employees">
-            <EmployeeProvider />
+            <EmployeeProvider >
             <EmployeeList />
-            <EmployeeProvider />
+            </EmployeeProvider >
         </article>
         <h2>Customers</h2>
         <article className="customers">
-            < CustomerProvider/>
+            < CustomerProvider>
             <CustomerList/>
-            < CustomerProvider/>
+            </ CustomerProvider>
             
         </article>
         <h2>Location</h2>
