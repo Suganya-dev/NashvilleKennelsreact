@@ -1,17 +1,17 @@
 import React, { useContext, useEffect } from "react"
-import { LocationContext } from "./AnimalProvider.js"
-import { Animal } from "./Animal.js"
+import { AnimalContext} from "./AnimalProvider"
+import { Animal } from "./Animal"
 import "./Animal.css"
 
 export const AnimalList = () => {
-    const { animals, getAnimals } = useContext(LocationContext)
+const {animals, getAnimals} = useContext(AnimalContext);
 
 // like responding to CustomEvent
 
 useEffect(() => {
     console.log("LocationList: Initial render before data")
     getAnimals()
-}, [])
+},[]);
 
 return (
     <div className="animals">

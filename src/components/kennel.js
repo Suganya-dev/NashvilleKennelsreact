@@ -4,12 +4,15 @@ import "./employee/Employee.css"
 import "./customers/Customer.css"
 import "./location/Location.css"
 import "./animal/Animal.css"
+import "./customers/Customer.css"
 
 import {LocationList} from "./location/LocationList.js"
 import {LocationProvider} from "./location/LocationProvider.js"
 import {AnimalProvider} from "./animal/AnimalProvider.js"
 import{AnimalList} from "./animal/AnimalList.js"
-import {Customer} from "./customers/Customer.js"
+import{CustomerProvider} from "./customers/CustomerProvider.js"
+import{CustomerList} from "./customers/CustomerList.js"
+// import {Customer} from "./customers/Customer.js"
 // import {Animal} from"./animal/Animal"
 import {Employee} from "./employee/Employee.js"
 
@@ -37,10 +40,10 @@ export const Kennel = () => (
         </article>
         <h2>Customers</h2>
         <article className="customers">
-            < Customer/>
-            < Customer/>
-            <Customer/>
-            <Customer/>
+            < CustomerProvider/>
+            <CustomerList/>
+            < CustomerProvider/>
+            
         </article>
         <h2>Location</h2>
         <article className="locations">

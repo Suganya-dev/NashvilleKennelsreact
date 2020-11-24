@@ -1,6 +1,6 @@
 import React, { useState} from "react"
 import "./Animal.css"
-export const LocationContext = React.createContext()
+export const AnimalContext  = React.createContext()
 
 export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
@@ -11,8 +11,8 @@ export const AnimalProvider = (props) => {
             .then(setAnimals)
     }
 
-    const addAnimals= animal=> {
-        return fetch("http://localhost:8088/locations", {
+    const addAnimal= animal=> {
+        return fetch("http://localhost:8088/animals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -22,11 +22,11 @@ export const AnimalProvider = (props) => {
             .then(getAnimals)
     }
     return (
-        <LocationContext.Provider value={
+        <AnimalContext.Provider value={
             {
-                animals, addAnimals, getAnimals
+                animals, addAnimal, getAnimals
         }}>
             {props.children}
-        </LocationContext.Provider>
+        </AnimalContext.Provider>
     )
 }
