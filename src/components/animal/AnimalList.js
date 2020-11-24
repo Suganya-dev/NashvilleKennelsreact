@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { AnimalContext} from "./AnimalProvider"
-import { Animal } from "./Animal"
+import { AnimalContext} from "./AnimalProvider.js"
+import { Animal } from "./Animal.js"
 import "./Animal.css"
 
 export const AnimalList = () => {
@@ -11,7 +11,7 @@ const {animals, getAnimals} = useContext(AnimalContext);
 useEffect(() => {
     console.log("LocationList: Initial render before data")
     getAnimals()
-},[]);
+});
 
 return (
     <div className="animals">

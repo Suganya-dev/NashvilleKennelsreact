@@ -11,7 +11,7 @@ export const LocationList = () => {
     useEffect(() => {
         console.log("LocationList: Initial render before data")
         getLocations()
-    }, [])
+    })
 
     // useEffect(() => {
     //     console.log("LocationList: Location state changed")

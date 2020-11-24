@@ -10,7 +10,7 @@ export const CustomerList = () => {
     useEffect(() => {
         console.log("LocationList: Initial render before data")
         getCustomers()
-    }, [])
+    })
 
     return (
         <div className="Customers">
