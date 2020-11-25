@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { AnimalContext} from "./AnimalProvider"
-import { Customercontext } from "./CustomerProvider"
-import { LocationContext } from "./LocationProvider"
+import { LocationContext } from "../location/LocationProvider"
+import { Customercontext } from "../customers/CustomerProvider"
 import { Animal } from "./Animal"
 import "./Animal.css"
 
@@ -14,21 +14,28 @@ const { locations, getLocations } = useContext(LocationContext)
 
 useEffect(() => {
     console.log("animalList: Initial render before data")
-    getAnimals()
+    getLocations()
     .then(getCustomers)
-    .then(getLocations)
+    .then(getAnimals)
 },[]);
 
-// return (
-//     <div className="animals">
-    
-     animals.map(animal => {
-        const owner = customers.find(c => c.id === animal.customerId)
-        const clinic = locations.find(l => l.id === animal.locationId)
-    
-        return <Animal key={animal.id}
-                    location={clinic}
-                    customer={owner}
-                    animal={animal} />
-    })
-    }
+
+return (
+    <div className="animals">
+      {
+      animals.map((animal) => {
+        const owner = customers.find((c) => c.id === animal.customerId);
+        const clinic = locations.find((l) => l.id === animal.locationId);
+
+        return (
+          <Animal
+            key={animal.id}
+            location={clinic}
+            customer={owner}
+            animal={animal}
+          />
+        );
+      })}
+    </div>
+  );
+};
