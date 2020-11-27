@@ -19,6 +19,9 @@ useEffect(() => {
     .then(getAnimals)
 },[]);
 
+// which array we are rendering that has to come last in the promises.
+    // .then(getAnimals)
+    
 
 return (
     <div className="animals">
@@ -39,3 +42,8 @@ return (
     </div>
   );
 };
+
+
+
+
+
