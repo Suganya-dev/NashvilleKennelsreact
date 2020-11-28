@@ -25,6 +25,10 @@ useEffect(() => {
 
 return (
     <div className="animals">
+             <h1>Animal Appt</h1>
+        <button onClick={() => props.history.push("/animals/create")}>
+            Make Appointment
+        </button>
       {
       animals.map((animal) => {
         const owner = customers.find((c) => c.id === animal.customerId);
