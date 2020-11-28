@@ -5,7 +5,7 @@ import { Customercontext } from "../customers/CustomerProvider"
 import { Animal } from "./Animal"
 import "./Animal.css"
 
-export const AnimalList = () => {
+export const AnimalList = (props) => {
 const {animals, getAnimals} = useContext(AnimalContext);
 const { customers, getCustomers } = useContext(Customercontext);
 const { locations, getLocations } = useContext(LocationContext)

@@ -15,7 +15,7 @@ const {addAnimal} = useContext(AnimalContext)
         value of the input fields later when the user clicks
         the save button.
 
-        No more `document.querySelector()` in React.
+        No more `document.querySelector()` in React.js    
     */
 const appoint = useRef(null)
 const location =useRef(null)
@@ -47,8 +47,8 @@ return (
         <h2 className="animalform__title">Make Appointment</h2>
         <fieldset>
             <div className="form-group">
-                <label htmlFor="animalName">Animal name: </label>
-                <input type="text" id="animalName" ref={name} required autoFocus className="form-control" placeholder="Animal name" />
+                <label htmlFor="animalName">Animal Name: </label>
+                <input type="text" id="animalName" ref={appoint} required autoFocus className="form-control" placeholder="Animal Name" />
             </div>
         </fieldset>
         <fieldset>
@@ -67,9 +67,9 @@ return (
         <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Caretaker for: </label>
-                    <select defaultValue="" name="animal" ref={animal} id="employeeAnimal" className="form-control" >
-                        <option value="0">Select an animal</option>
-                        {animals.map(e => (
+                    <select defaultValue="" name="animal" ref={customer} id="employeeAnimal" className="form-control" >
+                        <option value="0">Select an Customer</option>
+                        {customers.map(e => (
                             <option key={e.id} value={e.id}>
                                 {e.name}
                             </option>
