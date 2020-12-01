@@ -10,7 +10,7 @@ import "./Location.css"
 export const LocationList = () => {
     const { locations, getLocations } = useContext(LocationContext)
     const { employees, getEmployees } = useContext(EmployeeContext)
-    const { animals, getAnimals } = useContext(AnimalContext)
+    const { animal, getAnimals } = useContext(AnimalContext)
 
     useEffect(() => {
         getLocations().then(getEmployees).then(getAnimals)
@@ -22,7 +22,7 @@ export const LocationList = () => {
         {
             locations.map(location =>{
                 location.employees = employees.filter(e => e.locationId === location.id)
-                location.animals = animals.filter(a => a.locationId === location.id)
+                location.animals = animal.filter(a => a.locationId === location.id)
 
             return <article key={`location--${location.id}`} className="card location" style={{ width: `18rem` }}>
                 <section className="card-body">

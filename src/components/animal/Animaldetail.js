@@ -1,27 +1,31 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
+import { LocationContext } from "../location/LocationProvider"
 import "./Animal.css"
 
 export const AnimalDetails = (props) => {
-    const { releaseAnimal, getAnimals } = useContext(AnimalContext)
+    const { animal, getAnimalById } = useContext(AnimalContext)
 
-    const [animal, setAnimal] = useState({ location: {}, customer: {}})
+    const [animals, setAnimals] = useState({ location: {}, customer: {}})
+    // const [animals, setAnimals] = useState({})
+    // const [customer, setCustomers] = useState({})
+    // const [location, setLocations] = useState({})
 
     useEffect(() => {
         const animalId = parseInt(props.match.params.animalId)
-        getAnimals(animalId)
-            .then(setAnimal)
+        getAnimalById(animalId)
+            .then(setAnimals)
     }, [])
 
     return (
         <section className="animal">
-            <h3 className="animal__name">{animal.name}</h3>
-            <div className="animal__breed">{animal.breed}</div>
-            <div className="animal__location">Location: {animal.location.name}</div>
-            <div className="animal__owner">Customer: {animal.customer.name}</div>
+            <h3 className="animal__name">{animals.name}</h3>
+            <div className="animal__breed">{animals.breed}</div>
+            <div className="animal__location">Location: {animals.location.name}</div>
+            <div className="animal__owner">Customer: {animals.customer.name}</div>
             <button onClick={
                 () => {
-                    releaseAnimal(animal)
+                    animal(animals)
                         .then(() => {
                             props.history.push("/animals")
                         })
@@ -30,7 +34,7 @@ export const AnimalDetails = (props) => {
                 Release Animal
             </button>
             <button onClick={() => {
-                props.history.push(`/animals/edit/${animal.id}`)
+                props.history.push(`/animals/edit/${animals.id}`)
             }}>Edit</button>
         </section>
     )

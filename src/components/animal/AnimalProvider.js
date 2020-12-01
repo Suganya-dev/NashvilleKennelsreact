@@ -3,19 +3,19 @@ import "./Animal.css"
 export const AnimalContext  = React.createContext()
 
 export const AnimalProvider = (props) => {
-    const [animals, setAnimals] = useState([])
+    const [animal, setAnimal] = useState([])
 
     const getAnimals = () => {
         return fetch("http://localhost:8088/animals")
             .then(res => res.json())
-            .then(setAnimals)
+            .then(setAnimal)
     }
     
     const getAnimalById = (id) => {
         return fetch(`http://localhost:8088/animals/${ id }?_expand=location&_expand=customer`)
             .then(res => res.json())
     }
-    
+
     const addAnimal= animal=> {
         return fetch("http://localhost:8088/animals", {
             method: "POST",
@@ -29,7 +29,7 @@ export const AnimalProvider = (props) => {
     return (
         <AnimalContext.Provider value={
             {
-                animals, addAnimal, getAnimals
+                animal, addAnimal, getAnimals,getAnimalById
         }}>
             {props.children}
         </AnimalContext.Provider>

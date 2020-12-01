@@ -6,12 +6,12 @@ import "./Employee.css"
 
 // importing datas using usecontext
 export const EmployeeDetail = (props) => {
-    const { animals, getAnimals } = useContext(AnimalContext)
+    const { animal, getAnimals } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { employees, getEmployees } = useContext(EmployeeContext)
 // using statevariable for state change
 
-    const [animal, setAnimals] = useState({})
+    const [animals, setAnimals] = useState({})
     const [employee, setEmployees] = useState({})
     const [location, setLocations] = useState({})
     
@@ -23,9 +23,9 @@ export const EmployeeDetail = (props) => {
     }, [])
 
     useEffect(() => {
-        const animal = animals.find(a => a.id === employee.animalId) || {}
-        setAnimals(animal)
-    }, [animals])
+        const animals = animal.find(a => a.id === employee.animalId) || {}
+        setAnimals(animals)
+    }, [animal])
 // dynamic routing takes place
     useEffect(() => {
         const employee = employees.find(e => e.id === parseInt(props.match.params.employeeId)) || {}
@@ -45,7 +45,7 @@ export const EmployeeDetail = (props) => {
                 {
                 (employee.animalId === null)
                     ? "Not assigned to an animal"
-                    : `Currently taking care of ${animal.name}`
+                    : `Currently taking care of ${animals.name}`
                 }
             </div>
         </section>

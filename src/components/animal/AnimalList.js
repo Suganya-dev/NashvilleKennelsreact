@@ -6,7 +6,7 @@ import { Animal } from "./Animal"
 import "./Animal.css"
 
 export const AnimalList = ({ history }) => {
-  const { getAnimals, animals } = useContext(AnimalContext)
+  const { getAnimals, animal } = useContext(AnimalContext)
 
   // Initialization effect hook -> Go get animal data
   useEffect(()=>{
@@ -20,9 +20,9 @@ return (
         <button onClick={() => history.push("/animals/create")}>
             Make Reservation
         </button>
-        <div className="animals">
+        <div className="animal">
             {
-                animals.map(animal => {
+                animal.map(animal => {
                     return <Animal key={animal.id} animal={animal} />
                 })
             }
