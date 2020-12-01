@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { EmployeeContext,EmployeeProvider} from "./EmployeeProvider"
+import { EmployeeContext} from "./EmployeeProvider"
 import { Employee } from "./Employee"
 import "./Employee.css"
 
@@ -20,9 +20,15 @@ export const EmployeeList = (props) => {
         </button>
         <article className="employeeList"> 
         {
-            employees.map(emp => <Employee key={emp.id} employee={emp} />)
+            employees.map(employee => {
+                return <Link key={employee.id} to={`/employees/${employee.id}`}>
+                            <h3>{employee.name}</h3>
+                        </Link>
+        })
         }
         </article>
         </div>
     )
     }
+
+    // employees.map(emp => <Employee key={emp.id} employee={emp} />)

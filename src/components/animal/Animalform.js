@@ -17,7 +17,7 @@ const {addAnimal} = useContext(AnimalContext)
 
         No more `document.querySelector()` in React.js    
     */
-const appoint = useRef(null)
+const animal = useRef(null)
 const location =useRef(null)
 const customer = useRef(null)
 
@@ -29,12 +29,13 @@ useEffect(() => {
 const constructNewAppt = () =>{
     const locationId = parseInt(location.current.value)
     const customerId = parseInt(customer.current.value)
+    const animalName = animal.current.value
 
-    if (locationId === 0) {
-        window.alert("Please select a location")
+    if (locationId === 0 || customerId===0 || animalName==="" ) {
+        window.alert("Please select a location ,customer and animal Name")
     } else {
         addAnimal({
-            Appointment: appoint.current.value,
+            name: animalName,
             locationId,
             customerId
         })
@@ -48,7 +49,7 @@ return (
         <fieldset>
             <div className="form-group">
                 <label htmlFor="animalName">Animal Name: </label>
-                <input type="text" id="animalName" ref={appoint} required autoFocus className="form-control" placeholder="Animal Name" />
+                <input type="text" id="animalName" ref={animal} required autoFocus className="form-control" placeholder="Animal Name" />
             </div>
         </fieldset>
         <fieldset>
