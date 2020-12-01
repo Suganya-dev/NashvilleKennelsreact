@@ -2,16 +2,16 @@ import React, { useState, useEffect, useContext } from "react"
 import { AnimalContext } from "../animal/AnimalProvider"
 import { LocationContext } from "../location/LocationProvider"
 import { EmployeeContext } from "./EmployeeProvider"
-import "./Employees.css"
+import "./Employee.css"
 
 export const EmployeeDetail = (props) => {
     const { animals, getAnimals } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { employees, getEmployees } = useContext(EmployeeContext)
 
-    const [animals, setAnimals] = useState({})
-    const [employees, setEmployees] = useState({})
-    const [locations, setLocations] = useState({})
+    const [animal, setAnimals] = useState({})
+    const [employee, setEmployees] = useState({})
+    const [location, setLocations] = useState({})
 
     useEffect(() => {
         getEmployees()

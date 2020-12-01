@@ -9,6 +9,7 @@ import {EmployeeList} from "./employee/EmployeeList"
 import { LocationList } from "./location/LocationList"
 import { AnimalList } from "./animal/AnimalList"
 import {EmployeeForm} from "./employee/Employeeform"
+import {EmployeeDetail} from "./employee/EmployeeDetail"
 import {Animalform} from "./animal/Animalform"
 
 export const ApplicationViews = (props) => {
