@@ -21,6 +21,7 @@ export const EmployeeList = (props) => {
             Add Employee
         </button>
         <article className="employeeList"> 
+        {/* each employee has a unique identifier as id */}
         {
             employees.map(employee => {
                 return <Link key={employee.id} to={`/employees/${employee.id}`}>
