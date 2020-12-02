@@ -10,6 +10,7 @@ export const EmployeeDetail = (props) => {
     const { locations, getLocations } = useContext(LocationContext)
     const { employees, getEmployees } = useContext(EmployeeContext)
 // using statevariable for state change
+// whenever URL(state) changes useState helps to start render and gets data
 
     const [animals, setAnimals] = useState({})
     const [employee, setEmployees] = useState({})

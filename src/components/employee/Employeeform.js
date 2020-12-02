@@ -7,7 +7,7 @@ import "./Employee.css"
 export const EmployeeForm = (props) => {
     const { addEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
-    const { animals, getAnimals } = useContext(AnimalContext)
+    const { animal, getAnimals } = useContext(AnimalContext)
 
     /*
         Create references that can be attached to the input
@@ -19,7 +19,7 @@ export const EmployeeForm = (props) => {
     */
     const name = useRef(null)
     const location = useRef(null)
-    const animal = useRef(null)
+    const animals = useRef(null)
 
     /*
         Get animal state and location state on initialization.
@@ -62,27 +62,27 @@ export const EmployeeForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="location">Assign to location: </label>
-                    <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
-                        <option value="0">Select a location</option>
-                        {locations.map(e => (
-                            <option key={e.id} value={e.id}>
-                                {e.name}
-                            </option>
-                        ))}
+                <label htmlFor="location">Assign to location: </label>
+                <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
+                <option value="0">Select a location</option>
+                    {locations.map(e => (
+                    <option key={e.id} value={e.id}>
+                        {e.name}
+                    </option>
+                    ))}
                     </select>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="location">Caretaker for: </label>
-                    <select defaultValue="" name="animal" ref={animal} id="employeeAnimal" className="form-control" >
-                        <option value="0">Select an animal</option>
-                        {animals.map(e => (
-                            <option key={e.id} value={e.id}>
-                                {e.name}
-                            </option>
-                        ))}
+                <label htmlFor="location">Caretaker for: </label>
+                <select defaultValue="" name="animal" ref={animal} id="employeeAnimal" className="form-control" >
+                <option value="0">Select an animal</option>
+                {animal.map(e => (
+                    <option key={e.id} value={e.id}>
+                     {e.name}
+                    </option>
+                    ))}
                     </select>
                 </div>
             </fieldset>

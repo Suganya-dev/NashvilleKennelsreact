@@ -16,7 +16,8 @@ export const LocationList = () => {
         getLocations().then(getEmployees).then(getAnimals)
     }, [])
     
-
+    // here we are not using useState,bcoz we are just using data from other component
+    //  rendering an returning to dOM
     return (
         <div className="locations">
         {
