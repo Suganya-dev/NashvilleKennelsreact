@@ -19,16 +19,16 @@ export const AnimalDetails = (props) => {
 
     return (
         <section className="animal">
-            <h3 className="animal__name">{animals.name}</h3>
-            <div className="animal__breed">{animals.breed}</div>
-            <div className="animal__location">Location: {animals.location.name}</div>
-            <div className="animal__owner">Customer: {animals.customer.name}</div>
-            <button onClick={
-                () => {
-                    animal(animals)
-                        .then(() => {
-                            props.history.push("/animals")
-                        })
+        <h3 className="animal__name">{animals.name}</h3>
+        <div className="animal__breed">{animals.breed}</div>
+        <div className="animal__location">Location: {animals.location.name}</div>
+        <div className="animal__owner">Customer: {animals.customer.name}</div>
+        <button onClick={
+            () => {
+                animal(animals)
+                .then(() => {
+                 props.history.push("/animals")
+                })
                 }
             }>
                 Release Animal
