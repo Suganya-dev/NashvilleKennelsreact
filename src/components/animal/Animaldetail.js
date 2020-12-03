@@ -4,7 +4,7 @@ import { LocationContext } from "../location/LocationProvider"
 import "./Animal.css"
 
 export const AnimalDetails = (props) => {
-    const { animal, getAnimalById } = useContext(AnimalContext)
+    const { animal, getAnimalById,releaseAnimal} = useContext(AnimalContext)
 
     const [animals, setAnimals] = useState({ location: {}, customer: {}})
     // const [animals, setAnimals] = useState({})
@@ -36,6 +36,16 @@ export const AnimalDetails = (props) => {
             <button onClick={() => {
                 props.history.push(`/animals/edit/${animals.id}`)
             }}>Edit</button>
+
+        <button className="btn--release"
+        onClick={() => {
+            // Code to delete animal from database
+            releaseAnimal(props.match.params.animalId)
+            .then(() =>{
+                props.history.push("/animals")
+            })
+        }}
+        >Release</button>
         </section>
     )
 }
