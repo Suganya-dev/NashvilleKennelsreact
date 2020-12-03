@@ -33,6 +33,8 @@ export const AnimalDetails = (props) => {
             }>
                 Release Animal
             </button>
+
+           
             <button onClick={() => {
                 props.history.push(`/animals/edit/${animals.id}`)
             }}>Edit</button>
